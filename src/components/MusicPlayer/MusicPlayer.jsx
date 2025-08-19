@@ -1,92 +1,43 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useRef, useEffect } from "react";
 import { gsap } from "gsap";
+import { useMusicPlayer } from "../../contexts/MusicPlayerContext";
 import "./MusicPlayer.css";
 
 const MusicPlayer = () => {
-  const songs = [
-    {
-      id: 1,
-      title: "Dreamland",
-      artist: "By Balanced Pitch",
-      diskArt: "/songs/dreamland.png",
-      mp3: "/songs/dreamland.mp3",
-    },
-    {
-      id: 2,
-      title: "Gameplay",
-      artist: "By Balanced Pitch",
-      diskArt: "/songs/gameplay.png",
-      mp3: "/songs/gameplay.mp3",
-    },
-  ];
+  const {
+    songs,
+    currentSongIndex,
+    isPlaying,
+    isFlipping,
+    handleNext,
+    handlePrevious,
+    togglePlay,
+  } = useMusicPlayer();
 
-  const [currentSongIndex, setCurrentSongIndex] = useState(0);
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [isFlipping, setIsFlipping] = useState(false);
-  const audioRef = useRef(null);
   const diskRef = useRef(null);
-
-  useEffect(() => {
-    if (audioRef.current) {
-      audioRef.current.load();
-      if (isPlaying) {
-        audioRef.current.play().catch((error) => {
-          console.error("Error playing audio:", error);
-          setIsPlaying(false);
-        });
-      }
-    }
-  }, [currentSongIndex]);
-
-  useEffect(() => {
-    if (audioRef.current) {
-      if (isPlaying) {
-        audioRef.current.play().catch((error) => {
-          console.error("Error playing audio:", error);
-          setIsFlipping(false);
-        });
-      } else {
-        audioRef.current.pause();
-      }
-    }
-  }, [isPlaying]);
 
   const handleFlip = (direction) => {
     if (isFlipping) return;
-    setIsFlipping(true);
-
-    const nextIndex =
-      direction === "next"
-        ? currentSongIndex === songs.length - 1
-          ? 0
-          : currentSongIndex + 1
-        : currentSongIndex === 0
-        ? songs.length - 1
-        : currentSongIndex - 1;
 
     const currentRotation = gsap.getProperty(diskRef.current, "rotateY");
     gsap.to(diskRef.current, {
       duration: 1,
       rotateY: currentRotation + 180,
       ease: "power1.inOut",
-      onComplete: () => {
-        setCurrentSongIndex(nextIndex);
-        setIsFlipping(false);
-      },
     });
+
+    if (direction === "next") {
+      handleNext();
+    } else {
+      handlePrevious();
+    }
   };
 
-  const handlePrevious = () => handleFlip("prev");
-  const handleNext = () => handleFlip("next");
-  const togglePlay = () => setIsPlaying(!isPlaying);
+  const handlePreviousClick = () => handleFlip("prev");
+  const handleNextClick = () => handleFlip("next");
 
   return (
     <div className="player-container">
-      <audio ref={audioRef} onEnded={handleNext}>
-        <source src={songs[currentSongIndex].mp3} type="audio/mpeg" />
-        Your browser does not support the audio element.
-      </audio>
-
       <div className="vinyl-container">
         <div className="disk-wrapper" ref={diskRef}>
           <div className="disk-side front">
@@ -113,7 +64,7 @@ const MusicPlayer = () => {
 
       <div className="controls">
         <button
-          onClick={handlePrevious}
+          onClick={handlePreviousClick}
           className="control-button"
           aria-label="Previous track"
           disabled={isFlipping}
@@ -172,7 +123,7 @@ const MusicPlayer = () => {
         </button>
 
         <button
-          onClick={handleNext}
+          onClick={handleNextClick}
           className="control-button"
           aria-label="Next track"
           disabled={isFlipping}
