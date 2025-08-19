@@ -4,6 +4,8 @@ import Footer from "../../components/Footer/Footer";
 import Transition from "../../components/transition/Transition";
 import ParallaxImage from "../../components/ParallaxImage/ParallaxImage";
 import { ReactLenis } from "lenis/react";
+import AnimatedLink from "../../components/AnimatedLink/AnimatedLink";
+import CtaButton from "../../components/CtaButton/CtaButton";
 
 const Contact = () => {
   return (
@@ -33,7 +35,7 @@ const Contact = () => {
                 </p>
                 <p>Faça Sua Voz Valer a Pena</p>
                 <button>
-                  <Link to="/contact">Inscreva-se</Link>
+                  <CtaButton to="/contact">Inscreva-se</CtaButton>
                 </button>
               </div>
               <div className="form-details">
@@ -48,7 +50,7 @@ const Contact = () => {
                 <div className="divider"></div>
                 <div className="careers-cta">
                   <p className="primary">
-                    <Link to="/">Ver Vagas</Link>
+                    <AnimatedLink to="/">Leia Mais</AnimatedLink>
                   </p>
                 </div>
               </div>

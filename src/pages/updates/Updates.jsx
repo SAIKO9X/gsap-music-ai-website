@@ -7,6 +7,7 @@ import ParallaxImage from "../../components/ParallaxImage/ParallaxImage";
 import { ReactLenis } from "lenis/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import AnimatedLink from "../../components/AnimatedLink/AnimatedLink";
 
 const Updates = () => {
   useEffect(() => {
@@ -70,7 +71,7 @@ const Updates = () => {
               </div>
               <div className="article-link">
                 <p className="primary">
-                  <Link to="/">Leia Mais</Link>
+                  <AnimatedLink to="/">Leia Mais</AnimatedLink>
                 </p>
               </div>
             </div>
@@ -89,7 +90,7 @@ const Updates = () => {
               </div>
               <div className="article-link">
                 <p className="primary">
-                  <Link to="/">Leia Mais</Link>
+                  <AnimatedLink to="/">Leia Mais</AnimatedLink>
                 </p>
               </div>
             </div>
@@ -108,7 +109,7 @@ const Updates = () => {
               </div>
               <div className="article-link">
                 <p className="primary">
-                  <Link to="/">Leia Mais</Link>
+                  <AnimatedLink to="/">Leia Mais</AnimatedLink>
                 </p>
               </div>
             </div>
@@ -124,7 +125,7 @@ const Updates = () => {
               </div>
               <div className="article-link">
                 <p className="primary">
-                  <Link to="/">Leia Mais</Link>
+                  <AnimatedLink to="/">Leia Mais</AnimatedLink>
                 </p>
               </div>
             </div>
@@ -145,7 +146,7 @@ const Updates = () => {
               </div>
               <div className="article-link">
                 <p className="primary">
-                  <Link to="/">Leia Mais</Link>
+                  <AnimatedLink to="/">Leia Mais</AnimatedLink>
                 </p>
               </div>
             </div>
@@ -164,7 +165,7 @@ const Updates = () => {
               </div>
               <div className="article-link">
                 <p className="primary">
-                  <Link to="/">Leia Mais</Link>
+                  <AnimatedLink to="/">Leia Mais</AnimatedLink>
                 </p>
               </div>
             </div>
@@ -183,7 +184,7 @@ const Updates = () => {
               </div>
               <div className="article-link">
                 <p className="primary">
-                  <Link to="/">Leia Mais</Link>
+                  <AnimatedLink to="/">Leia Mais</AnimatedLink>
                 </p>
               </div>
             </div>

@@ -97,6 +97,12 @@
 
 .feature-title {
   display: flex;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-title:hover {
+  transform: translateY(-8px);
+  cursor: default;
 }
 
 .feature-title p {
@@ -186,6 +192,15 @@ section.rights {
   flex: 1;
   text-align: center;
   background-color: var(--color-dark);
+}
+
+.right-desc-line p {
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.right-desc-line:hover p {
+  transform: translateY(-5px);
+  color: var(--color-accent);
 }
 
 .right-index,
