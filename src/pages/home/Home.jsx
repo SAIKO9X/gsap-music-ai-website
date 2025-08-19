@@ -8,6 +8,8 @@ import MusicPlayer from "../../components/MusicPlayer/MusicPlayer";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ReactLenis } from "lenis/react";
+import CtaButton from "../../components/CtaButton/CtaButton";
+import AnimatedLink from "../../components/AnimatedLink/AnimatedLink";
 
 const Home = () => {
   useEffect(() => {
@@ -65,9 +67,7 @@ const Home = () => {
             <div className="stickers">
               <img src="/stickers.png" alt="Adesivos decorativos" />
             </div>
-            <button>
-              <Link to="/contact">Entre em Contato</Link>
-            </button>
+            <CtaButton to="/contact">Entre em Contato</CtaButton>
           </div>
           <div className="news-article">
             <div className="news-article-title">
@@ -146,9 +146,7 @@ const Home = () => {
               futuro da arte na era da IA.
             </p>
             <div className="cover-cta">
-              <button>
-                <Link to="/">Nossa Missão</Link>
-              </button>
+              <CtaButton to="/">Nossa Missão</CtaButton>
             </div>
           </div>
         </section>
@@ -200,7 +198,7 @@ const Home = () => {
             valiosos na encruzilhada da inovação em IA e da indústria musical.
           </p>
           <div className="updates-page-link">
-            <Link to="/">Ver Todas as Novidades</Link>
+            <AnimatedLink to="/">Ver Todas as Novidades</AnimatedLink>
           </div>
           <div className="articles-row">
             <div className="article">
@@ -219,7 +217,7 @@ const Home = () => {
               </div>
               <div className="article-link">
                 <p className="primary">
-                  <Link to="/">Leia Mais</Link>
+                  <AnimatedLink to="/">Leia Mais</AnimatedLink>
                 </p>
               </div>
             </div>
@@ -238,7 +236,7 @@ const Home = () => {
               </div>
               <div className="article-link">
                 <p className="primary">
-                  <Link to="/">Leia Mais</Link>
+                  <AnimatedLink to="/">Leia Mais</AnimatedLink>
                 </p>
               </div>
             </div>

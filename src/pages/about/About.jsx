@@ -7,6 +7,8 @@ import ParallaxImage from "../../components/ParallaxImage/ParallaxImage";
 import { ReactLenis } from "lenis/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import CtaButton from "../../components/CtaButton/CtaButton";
+import AnimatedLink from "../../components/AnimatedLink/AnimatedLink";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -69,7 +71,7 @@ const About = () => {
               </div>
               <div className="sign-up-cta">
                 <button>
-                  <Link to="/">Inscreva-se</Link>
+                  <CtaButton to="/">Inscreva-se</CtaButton>
                 </button>
               </div>
             </div>
@@ -92,7 +94,7 @@ const About = () => {
             </p>
             <div className="about-us-cta">
               <button>
-                <Link to="/contact">Fale Conosco</Link>
+                <CtaButton to="/contact">Fale Conosco</CtaButton>
               </button>
             </div>
           </div>
@@ -117,7 +119,9 @@ const About = () => {
               </p>
               <div className="join-team-cta">
                 <button>
-                  <Link to="/">Carreiras</Link>
+                  <CtaButton to="/" variant="dark">
+                    Carreiras
+                  </CtaButton>
                 </button>
               </div>
             </div>
@@ -146,7 +150,7 @@ const About = () => {
                   </p>
                 </div>
                 <div className="player-social">
-                  <Link to="/">LinkedIn</Link>
+                  <AnimatedLink to="/">LinkedIn</AnimatedLink>
                 </div>
               </div>
               <div className="team-player">
@@ -170,7 +174,7 @@ const About = () => {
                   </p>
                 </div>
                 <div className="player-social">
-                  <Link to="/">LinkedIn</Link>
+                  <AnimatedLink to="/">LinkedIn</AnimatedLink>
                 </div>
               </div>
             </div>
@@ -196,7 +200,7 @@ const About = () => {
                   </p>
                 </div>
                 <div className="player-social">
-                  <Link to="/">LinkedIn</Link>
+                  <AnimatedLink to="/">LinkedIn</AnimatedLink>
                 </div>
               </div>
               <div className="team-player">
@@ -220,7 +224,7 @@ const About = () => {
                   </p>
                 </div>
                 <div className="player-social">
-                  <Link to="/">LinkedIn</Link>
+                  <AnimatedLink to="/">LinkedIn</AnimatedLink>
                 </div>
               </div>
             </div>
